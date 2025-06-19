@@ -1,7 +1,12 @@
 ## Understanding Attention
 
-Traditional sequence models like RNNs and LSTMs suffer from loss of memory as sequences get longer.
-This can be explained mathematically how RNNs typically wok. The state $`x_t`$ at time `t`  
+1. Traditional sequence models like RNNs and LSTMs suffer from loss of memory as sequences get longer.
+2. This can be explained mathematically how RNNs typically wok. The state $`x_t`$ at time $`t`$ updates the hidden state $h_{t}$ from  $`x_t`$ and $h_{t-1}$ using the  recurrence  $`h_t`$ = $`W_{hh}`$$`h_{t-1}`$  + $`W_{xh}`$$`h_{t-1}`$
+
+3. Now for the RNN to learn useful correlation between words/subtokens at positions $`t`$ and $`t-k`$ esentially at distance $`k`$ the Jacobian of $`h_t`$ wrt to  $`h_{t-k}`$
+
+
+    
 Enter attention: a method that allows the model to assign relevance weights to different parts of an input when producing an output.
 Think of it like reading a novel and highlighting the lines that resonate with you. The attention mechanism does something similar—it dynamically weighs words, pixels, or tokens based on their contextual importance.
 This is a sample blog post. You can talk about all sorts of fun things here.
