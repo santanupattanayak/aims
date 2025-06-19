@@ -1,9 +1,9 @@
-## Blog Post Title From First Header
+## Understanding Attention
 
-Due to a plugin called `jekyll-titles-from-headings` which is supported by GitHub Pages by default. The above header (in the markdown file) will be automatically used as the pages title.
-
-If the file does not start with a header, then the post title will be derived from the filename.
-
+Traditional sequence models like RNNs and LSTMs suffer from loss of memory as sequences get longer.
+This can be explained mathematically how RNNs typically wok. The state $`x_t`$ at time `t`  
+Enter attention: a method that allows the model to assign relevance weights to different parts of an input when producing an output.
+Think of it like reading a novel and highlighting the lines that resonate with you. The attention mechanism does something similar—it dynamically weighs words, pixels, or tokens based on their contextual importance.
 This is a sample blog post. You can talk about all sorts of fun things here.
 
 ---
