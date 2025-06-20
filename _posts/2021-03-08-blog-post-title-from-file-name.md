@@ -20,9 +20,9 @@
 8. The hidden to hidden matrix $`W_{hh}`$ is a square and in general a non symmetrical matrix. And hence we can decompose
    $`W_{hh} = USU^{-}`$ where $`U`$ is matrix of the eigen vectors of $`W_{hh}`$ while $`S`$ is the diagonal matrix having the eigen values of $`W_{hh}`$. Substituting the eigen value decomposition in (7) we get the final form of the Jacobian as
 
-   $`\nabla_{h_{t-k}} h_t`$  = $`\prod_{j=t:t-k+1}\nabla_{h_{j-1}} h_j=`$ $`\sigma^{'}(t)*`$$`\sigma^{'}(t-1)*..*`$$`\sigma^{'}(t-k+1)*US^{k}U^{-1}`$
+   $`\nabla_{h_{t-k}} h_t`$  = $`\prod_{j=t:t-k+1}\nabla_{h_{j-1}} h_j=`$ $`\sigma^{'}(t)*`$$`\sigma^{'}(t-1)*..*`$$`\sigma^{'}(t-k+1)*US^{k}U^{-1}`$  
 
-9. When the magnitude of the eigen values $`|\lambda|`$ of $`W_{hh}`$ housed in $`S`$ are less than 1 then  $`|\lambda|^{k} \rightarrow 0 `$ when $`k`$ is large. Likewise the eigen values with magnitude > 1 with explode for large $`k`$. Vanishing gradient happens when the largest of the eigen value $`max|\lambda| < 1`$ as then $`S^{k} \rightarror 0`$
+9. When the magnitude of the eigen values $`|\lambda_{i}|`$ of $`W_{hh}`$ housed in $`S`$ are less than 1 then  $`|\lambda_{i}|^{k} \rightarrow 0 `$ when $`k`$ is large. Likewise the eigen values with magnitude > 1 with explode for large $`k`$. Vanishing gradient happens when the largest of the eigen value $`max_{i}|\lambda_{i}| < 1`$ as then $`S^{k} \rightarrow 0`$ . The $`\sigma^{'}(t)`$ won't be able to help much in avoiding the vanishing gradient in this case as the derivatives of the sigmoids are themselves less than 1. 
 
    
 
