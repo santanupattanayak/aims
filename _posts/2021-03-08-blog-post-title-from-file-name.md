@@ -32,6 +32,17 @@ There are two equations that govern the dynamics of a RNN
    $`g`$ is a non linear activation function that produces the output. Can be a softmax of proabilities over vocabulary words or number of classes for some classifiction tasks.
 
    We have skipped the bias terms to keep the formulation simple.
+
+
+## Inductive Bias
+
+Every model comes with assumptions about the data — this is called its inductive bias. RNNs assume:
+1. Temporal causality: Future states depend on the past (not vice versa).
+   
+2.Parameter sharing across time: The same set of weights is applied at each time step, which implies time invariance and reduces the number of parameters.
+
+3. Sequential dependence: Outputs are generated one step at a time, making RNNs ideal for tasks like text generation or speech recognition.
+This bias makes RNNs efficient for sequence modeling but also introduces challenges like vanishing gradients when learning long-term dependencies which we will discuss in detail.
    
 
 ## Understanding Vanishing Gradient in RNN
