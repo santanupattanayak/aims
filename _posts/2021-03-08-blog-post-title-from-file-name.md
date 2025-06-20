@@ -1,10 +1,16 @@
 ## Introduction to RNNs
 
-Recurrent Neural Networks (RNNs) are a class of neural architectures designed to model sequential or time-dependent data. Unlike feedforward networks, RNNs incorporate memory of previous inputs through cycles in the network’s structure, enabling them to capture temporal dynamics.
-At their core, RNNs maintain a hidden state $`h_t`$ that is updated at each time step $`t`$ based on the current input $`x_t`$ and the previous hidden state $`h_{t-1}`$. This recursive formulation allows the network to maintain context over sequences, making them well-suited for tasks like:
+Recurrent Neural Networks (RNNs) are a class of neural architectures designed to model sequential or time-dependent data. 
+
+Unlike feedforward networks, RNNs incorporate memory of previous inputs through cycles in the network’s structure, enabling them to capture temporal dynamics.
+
+At their core, RNNs maintain a hidden state $`h_t`$ that is updated at each time step $`t`$ based on the current input $`x_t`$ and the previous hidden state $`h_{t-1}`$. 
+
+This recursive formulation allows the network to maintain context over sequences, making them well-suited for tasks like:
 Natural language processing (NLP): language modeling, machine translation, sentiment analysis
 Time series forecasting: stock prediction, sensor data analysis
 Sequence labeling and generation: named entity recognition, handwriting and speech generation
+
 However, traditional RNNs struggle with long-term dependencies due to vanishing and exploding gradient problems during backpropagation through time (BPTT). To overcome this, more advanced variants like Long Short-Term Memory (LSTM) and Gated Recurrent Unit (GRU) were developed, incorporating gating mechanisms to regulate information flow.
 
 ## Mathematical Equations governing RNNs
