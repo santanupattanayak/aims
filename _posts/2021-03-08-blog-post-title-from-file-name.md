@@ -1,4 +1,4 @@
-## Understanding Attention
+## Understanding Vanishing Gradient in RNN
 
 1. Traditional sequence models like RNNs and LSTMs suffer from loss of memory as sequences get longer.
 2. This can be explained mathematically how RNNs typically wok. The state $`x_t`$ at time $`t`$ updates the hidden state $h_{t}$ from  $`x_t`$ and $h_{t-1}$ using the  recurrence  $`h_t`$ = $`\sigma(`$ $`W_{hh}`$$`h_{t-1}`$  + $`W_{xh}`$$`h_{t-1})`$ where the sigmoid is aplied elementwise on the linear transform.
