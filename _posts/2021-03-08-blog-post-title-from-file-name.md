@@ -22,7 +22,7 @@
 
    $`\nabla_{h_{t-k}} h_t`$  = $`\prod_{j=t:t-k+1}\nabla_{h_{j-1}} h_j=`$ $`\sigma^{'}(t)*`$$`\sigma^{'}(t-1)*..*`$$`\sigma^{'}(t-k+1)*US^{k}U^{-1}`$
 
-9. When the magnitude of the eigen values $`|\lambda|`$ of $`W_{hh}`$ housed in $`S`$ are less than 1 then  $`|\lambda|^{k} \rightarrow 0 `$ when $`k`$ is large.
+9. When the magnitude of the eigen values $`|\lambda|`$ of $`W_{hh}`$ housed in $`S`$ are less than 1 then  $`|\lambda|^{k} \rightarrow 0 `$ when $`k`$ is large. Likewise the eigen values with magnitude > 1 with explode for large $`k`$. Vanishing gradient happens when the largest of the eigen value $`max|\lambda| < 1`$ as then $`S^{k} \rightarror 0`$
 
    
 
