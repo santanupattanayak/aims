@@ -5,13 +5,13 @@
 
 3. Now for the RNN to learn useful correlation between words/subtokens at positions $`t`$ and $`t-k`$ esentially at distance $`k`$ during backpropagation the Jacobian of $`h_t`$ wrt to  $`h_{t-k}`$ i.e.  $`\nabla_{h_{t-k}} h_t`$ should have significant value.
 
-4. Let's probe $`\nabla_{h_{t-k}} h_t`$ . It can be expressed by chain rule as   $`\prod_{j=t:t-k-1}\nabla_{h_{j-1}} h_j`$
+4. Let's probe $`\nabla_{h_{t-k}} h_t`$ . It can be expressed by chain rule as   $`\prod_{j=t:t-k+1}\nabla_{h_{j-1}} h_j`$
 
 5. Now $`\nabla_{h_{t-1}} h_t = \sigma^{'}(t)W_{hh}`$ where $`\sigma^{'}(t)`$ is a diagonal matrix housing the  derivatives for each dimension of hidden variable $`h_t`$. To make it more clear if we represent  $`\tilde{h_{t}}=`$ $`\begin{bmatrix}\tilde{h_{t}^{0}} & .. & \tilde{h_{t}^{i}} & ..\end{bmatrix}^{T} =`$   $`W_{hh}`$$`h_{t-1}`$  + $`W_{xh}`$$`h_{t-1}`$  then $`\sigma^{'}(t)`$ in its $`i`$th diagonal entry would house $`\frac{\partial h_{t}^{(i)}}{\partial \tilde{h_{t}^{(i)}}}`$
 
 6. Now that we have laid out the required maths and notations the  Jacobian $`\nabla_{h_{t-k}} h_t`$ can be expressed as
    
-   $`\nabla_{h_{t-k}} h_t`$  = $`\prod_{j=t:t-k-1}\nabla_{h_{j-1}} h_j=`$ $`\sigma^{'}(t)W_{hh}*`$$`\sigma^{'}(t-1)W_{hh}*..*`$$`\sigma^{'}(t-k+1)W_{hh}`$
+   $`\nabla_{h_{t-k}} h_t`$  = $`\prod_{j=t:t-k+1}\nabla_{h_{j-1}} h_j=`$ $`\sigma^{'}(t)W_{hh}*`$$`\sigma^{'}(t-1)W_{hh}*..*`$$`\sigma^{'}(t-k+1)W_{hh}`$
 
 
     
