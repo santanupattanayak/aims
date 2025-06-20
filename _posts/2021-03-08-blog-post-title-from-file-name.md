@@ -17,9 +17,22 @@ There are two equations that govern the dynamics of a RNN
    
    $`x_t \in \mathbb{R}^{m}`$ : Input at time $`t`$
    
-   $`W_{hh} \in \mathbb{R}^{n \times n}`$: Hidden to hidden recurrence matrix
+   $`W_{hh} \in \mathbb{R}^{n \times n}`$: Hidden to hidden weight recurrence matrix
 
-   $`W_{xh} \in \mathbb{R}^{n \times m}`$: Input to hidden  matrix 
+   $`W_{xh} \in \mathbb{R}^{n \times m}`$: Input to hidden  weight matrix
+
+   $`f`$ is a non linear activation function that acts elementwise on the linear transform.
+
+2. The output at every step is based on the updated hidden state $`h_t`$ at time $`t`$ and can be expressed as
+
+   $`y_t = g(W_{ho}h_t)`$ where
+
+   $`W_{ho} \in \mathbb{R}^{V \times n}`$ : Hidden to output weight matrix. $`V`$ can be the size of the volcabulary or the number of classes.
+
+   $`g`$ is a non linear activation function that produces the output. Can be a softmax of proabilities over vocabulary words or number of classes for some classifiction tasks.
+   
+   
+
    
    
 
