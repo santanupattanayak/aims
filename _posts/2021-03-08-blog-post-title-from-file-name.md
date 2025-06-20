@@ -13,6 +13,10 @@
    
    $`\nabla_{h_{t-k}} h_t`$  = $`\prod_{j=t:t-k+1}\nabla_{h_{j-1}} h_j=`$ $`\sigma^{'}(t)W_{hh}*`$$`\sigma^{'}(t-1)W_{hh}*..*`$$`\sigma^{'}(t-k+1)W_{hh}`$
 
+7. Since the terms $`\sigma^{'}(.)`$ are diagnal matrices we can use the commutative property to come up with the Jacobian as below
+
+    $`\nabla_{h_{t-k}} h_t`$  = $`\prod_{j=t:t-k+1}\nabla_{h_{j-1}} h_j=`$ $`\sigma^{'}(t)*`$$`\sigma^{'}(t-1)*..*`$$`\sigma^{'}(t-k+1)*W_{hh}^{k}`$
+
 
     
 Enter attention: a method that allows the model to assign relevance weights to different parts of an input when producing an output.
