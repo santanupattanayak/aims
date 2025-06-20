@@ -30,10 +30,8 @@ There are two equations that govern the dynamics of a RNN
    $`W_{ho} \in \mathbb{R}^{V \times n}`$ : Hidden to output weight matrix. $`V`$ can be the size of the volcabulary or the number of classes.
 
    $`g`$ is a non linear activation function that produces the output. Can be a softmax of proabilities over vocabulary words or number of classes for some classifiction tasks.
-   
-   
 
-   
+   We have skipped the bias terms to keep the formulation simple.
    
 
 ## Understanding Vanishing Gradient in RNN
