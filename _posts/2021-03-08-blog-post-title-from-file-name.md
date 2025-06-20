@@ -7,7 +7,7 @@
 
 4. Let's probe $`\nabla_{h_{t-k}} h_t`$ . It can be expressed by chain rule as   $`\prod_{j=t:t-k-1}\nabla_{h_{j-1}} h_j`$
 
-5. Now $`\nabla_{h_{j-1}} h_j = \sigma^{'}(.)W_{hh}`$ where $`\sigma^{'}(.)`$ is a diagonal matrix housing the  derivatives for each dimension of hidden variable $`h_t`$. To make it more clear if we represent  $`\tilde{h_{t}}=`$ $`W_{hh}`$$`h_{t-1}`$  + $`W_{xh}`$$`h_{t-1}`$  then $`\sigma^{'}(.)`$ in its $`i`$th diagonal entry would house $`\frac{\partial h_{t}^{i}}{\partial h_{t}^{i}}}`$
+5. Now $`\nabla_{h_{j-1}} h_j = \sigma^{'}(.)W_{hh}`$ where $`\sigma^{'}(t)`$ is a diagonal matrix housing the  derivatives for each dimension of hidden variable $`h_t`$. To make it more clear if we represent  $`\tilde{h_{t}}=`$ $`\begin{bmatrix}\tilde{h_{t}^{0}} & .. & \tilde{h_{t}^{i}} & ..\end{bmatrix}^{T} =`$   $`W_{hh}`$$`h_{t-1}`$  + $`W_{xh}`$$`h_{t-1}`$  then $`\sigma^{'}(t)`$ in its $`i`$th diagonal entry would house $`\frac{\partial h_{t}^{(i)}}{\partial \tilde{h_{t}^{(i)}}}`$
 
 
     
