@@ -6,10 +6,27 @@ Natural language processing (NLP): language modeling, machine translation, senti
 Time series forecasting: stock prediction, sensor data analysis
 Sequence labeling and generation: named entity recognition, handwriting and speech generation
 However, traditional RNNs struggle with long-term dependencies due to vanishing and exploding gradient problems during backpropagation through time (BPTT). To overcome this, more advanced variants like Long Short-Term Memory (LSTM) and Gated Recurrent Unit (GRU) were developed, incorporating gating mechanisms to regulate information flow.
+
+## Mathematical Equations governing RNNs
+There are two equations that govern the dynamics of a RNN
+1. The hidden state update equation where hidden state $`h_t`$ that is updated at each time step $`t`$ based on the current input $`x_t`$ and the previous hidden state $`h_{t-1}`$ as below:
+   
+   $`h_t`$ = $`f(`$ $`W_{hh}`$$`h_{t-1}`$  + $`W_{xh}`$$`h_{t-1})`$ where
+
+   $`h_t \in \mathbb{R}^{n}`$ : hidden state at time $`t`$ containing the information of inputs seen till time $`t`$
+   
+   $`x_t \in \mathbb{R}^{m}`$ : Input at time $`t`$
+   
+   $`W_{hh} \in \mathbb{R}^{n \times n}`$: Hidden to hidden recurrence matrix
+
+   $`W_{xh} \in \mathbb{R}^{n \times m}`$: Input to hidden  matrix 
+   
+   
+
 ## Understanding Vanishing Gradient in RNN
 
 1. Traditional sequence models like RNNs and LSTMs suffer from loss of memory as sequences get longer.
-2. This can be explained mathematically how RNNs typically wok. The state $`x_t`$ at time $`t`$ updates the hidden state $h_{t}$ from  $`x_t`$ and $h_{t-1}$ using the  recurrence  $`h_t`$ = $`f(`$ $`W_{hh}`$$`h_{t-1}`$  + $`W_{xh}`$$`h_{t-1})`$ where the sigmoid is aplied elementwise on the linear transform. The $`f`$ function is usually the sigmoid or the $`tanh`$ function.
+2. This can be explained mathematically how RNNs typically work. As we have seen in the RNN formulation the state $`x_t`$ at time $`t`$ updates the hidden state $h_{t}$ from  $`x_t`$ and $h_{t-1}$ using the  recurrence  $`h_t`$ = $`f(`$ $`W_{hh}`$$`h_{t-1}`$  + $`W_{xh}`$$`h_{t-1})`$ where the sigmoid is aplied elementwise on the linear transform. The $`f`$ function is usually the sigmoid or the $`tanh`$ function.
 
 3. Now for the RNN to learn useful correlation between words/subtokens at positions $`t`$ and $`t-k`$ esentially at distance $`k`$ during backpropagation the Jacobian of $`h_t`$ wrt to  $`h_{t-k}`$ i.e.  $`\nabla_{h_{t-k}} h_t`$ should have significant value.
 
