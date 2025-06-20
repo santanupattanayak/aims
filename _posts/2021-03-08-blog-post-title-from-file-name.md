@@ -1,9 +1,13 @@
 ## Understanding Attention
 
 1. Traditional sequence models like RNNs and LSTMs suffer from loss of memory as sequences get longer.
-2. This can be explained mathematically how RNNs typically wok. The state $`x_t`$ at time $`t`$ updates the hidden state $h_{t}$ from  $`x_t`$ and $h_{t-1}$ using the  recurrence  $`h_t`$ = $`W_{hh}`$$`h_{t-1}`$  + $`W_{xh}`$$`h_{t-1}`$
+2. This can be explained mathematically how RNNs typically wok. The state $`x_t`$ at time $`t`$ updates the hidden state $h_{t}$ from  $`x_t`$ and $h_{t-1}$ using the  recurrence  $`h_t`$ = $`\sigma(`$ $`W_{hh}`$$`h_{t-1}`$  + $`W_{xh}`$$`h_{t-1})`$ where the sigmoid is aplied elementwise on the linear transform.
 
-3. Now for the RNN to learn useful correlation between words/subtokens at positions $`t`$ and $`t-k`$ esentially at distance $`k`$ the Jacobian of $`h_t`$ wrt to  $`h_{t-k}`$
+3. Now for the RNN to learn useful correlation between words/subtokens at positions $`t`$ and $`t-k`$ esentially at distance $`k`$ during backpropagation the Jacobian of $`h_t`$ wrt to  $`h_{t-k}`$ i.e.  $`\nabla_{h_{t-k}} h_t`$ should have significant value.
+
+4. Let's probe $`\nabla_{h_{t-k}} h_t`$ . It can be expressed by chain rule as   $`\prod_{j=t:t-k-1}\nabla_{h_{j-1}} h_j`$
+
+5. Now $`\nabla_{h_{j-1}} h_j = \sigma^{'}(.)W_{hh}`$ where $`\sigma^{'}(.)`$ is a diagonal matrix housing the  derivatives for each dimension of hidden variable $`h_t`$. To make it more clear if we represent  $`\tilde{h_{t}}=`$ $`W_{hh}`$$`h_{t-1}`$  + $`W_{xh}`$$`h_{t-1}`$  then $`\sigma^{'}(.)`$ in its $`i`$th diagonal entry would house $`\frac{\partial h_{t}^{i}}{\partial h_{t}^{i}}}`$
 
 
     
