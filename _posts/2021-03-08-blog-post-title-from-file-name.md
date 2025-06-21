@@ -17,7 +17,7 @@ However, traditional RNNs struggle with long-term dependencies due to vanishing 
 There are two equations that govern the dynamics of a RNN
 1. The hidden state update equation where hidden state $`h_t`$ that is updated at each time step $`t`$ based on the current input $`x_t`$ and the previous hidden state $`h_{t-1}`$ as below:
    
-   $`h_t`$ = $`f(`$ $`W_{hh}`$$`h_{t-1}`$  + $`W_{xh}`$$`h_{t-1})`$ where
+   $`h_t`$ = $`f(`$ $`W_{hh}`$$`h_{t-1}`$  + $`W_{xh}`$$`x_{t})`$ where
 
    $`h_t \in \mathbb{R}^{n}`$ : hidden state at time $`t`$ containing the information of inputs seen till time $`t`$
    
@@ -49,7 +49,13 @@ Every model comes with assumptions about the data — this is called its inducti
 
 3. $`\textbf{Sequential dependence}`$: Outputs are generated one step at a time, making RNNs ideal for tasks like text generation or speech recognition.
 This bias makes RNNs efficient for sequence modeling but also introduces challenges like vanishing gradients when learning long-term dependencies which we will discuss in detail.
-   
+
+## RNNs and the State Space Connection
+In control theory systems evolve over time via a latent "state". In the linear dynamical system the latent or the hidden variable $`h_t`$ at $`t`$ evolves linearly as a function of $`h_{t-1}`$ and input $`x_t`$ at time $`t`$. Below are the governing equations of the hiddens state evolution and the output.
+
+$`h_t`$ = $`Ah_{t-1}`$  + $`Bx_{t}`$
+
+$`y_t = Ch_{t} + Dx_t`$  
 
 ## Understanding Vanishing Gradient in RNN
 
