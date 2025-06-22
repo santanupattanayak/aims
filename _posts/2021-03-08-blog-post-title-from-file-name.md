@@ -13,6 +13,9 @@ Sequence labeling and generation: named entity recognition, handwriting and spee
 
 However, traditional RNNs struggle with long-term dependencies due to vanishing and exploding gradient problems during backpropagation through time (BPTT). To overcome this, more advanced variants like Long Short-Term Memory (LSTM) and Gated Recurrent Unit (GRU) were developed, incorporating gating mechanisms to regulate information flow.
 
+<img width="452" alt="image" src="https://github.com/user-attachments/assets/66df6ce9-7b7d-42c5-a22b-e8cff3685c06" />
+
+
 ## Mathematical Equations governing RNNs
 There are two equations that govern the dynamics of a RNN
 1. The hidden state update equation where hidden state $`h_t`$ that is updated at each time step $`t`$ based on the current input $`x_t`$ and the previous hidden state $`h_{t-1}`$ as below:
