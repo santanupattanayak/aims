@@ -101,7 +101,7 @@ Some of the similarities of RNNs with State Space Models(SSM) are as follows:
 
    Do note that the eigen values may have imaginary component too and hence can be complex numbers.
 
-10. When the magnitude of the eigen values $`|\lambda_{i}|`$ of $`W_{hh}`$ housed in $`S`$ are less than 1 then  $`|\lambda_{i}|^{k} \rightarrow 0 `$ when $`k`$ is large. Likewise the eigen values with magnitude > 1 with explode for large $`k`$. Vanishing gradient happens when the largest of the eigen value $`max_{i}|\lambda_{i}| < 1`$ as then $`S^{k} \rightarrow 0`$ . The $`f^{'}(t)`$ won't be able to help much in avoiding the vanishing gradient in this case as the derivatives of the sigmoids are themselves less than 1.
+10. When the magnitude of the eigen values $`|\lambda_{i}|`$ of $`W_{hh}`$ housed in $`S`$ are less than 1 then  $`|\lambda_{i}|^{k} \rightarrow 0 `$ when $`k`$ is large. Likewise the eigen values with magnitude > 1 with explode for large $`k`$. Vanishing gradient happens when the largest of the eigen value $`max_{i}|\lambda_{i}| < 1`$ as then $`S^{k} \rightarrow 0`$ . The $`f^{'}(t)`$ won't be able to help much in avoiding the vanishing gradient in this case as the derivatives of the tanh or the sigmoids are themselves less than 1.
 
 11. Alternately if the magnitude of the eigen values are > 1 then it may lead to exploding gradient causing unstable weight updates. 
 
