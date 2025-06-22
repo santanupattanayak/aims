@@ -41,7 +41,13 @@ There are two equations that govern the dynamics of a RNN
 
    We have skipped the bias terms to keep the formulation simple.
 
+Following is the flow of information in an RNN across timesteps. 
+
 ![image](https://github.com/user-attachments/assets/0200331e-b026-483f-a3db-8c0dd657f835)
+
+Since the weights remain same at every step the above flow can be folded into one compact block as below 
+
+
 
 ## Inductive Bias
 
