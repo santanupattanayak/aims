@@ -1,4 +1,4 @@
-## Introduction to RNNs
+![image](https://github.com/user-attachments/assets/0200331e-b026-483f-a3db-8c0dd657f835)## Introduction to RNNs
 
 Recurrent Neural Networks (RNNs) are a class of neural architectures designed to model sequential or time-dependent data. 
 
@@ -13,7 +13,6 @@ Sequence labeling and generation: named entity recognition, handwriting and spee
 
 However, traditional RNNs struggle with long-term dependencies due to vanishing and exploding gradient problems during backpropagation through time (BPTT). To overcome this, more advanced variants like Long Short-Term Memory (LSTM) and Gated Recurrent Unit (GRU) were developed, incorporating gating mechanisms to regulate information flow.
 
-<img width="452" alt="image" src="https://github.com/user-attachments/assets/66df6ce9-7b7d-42c5-a22b-e8cff3685c06" />
 
 
 ## Mathematical Equations governing RNNs
@@ -41,6 +40,7 @@ There are two equations that govern the dynamics of a RNN
    $`g`$ is a non linear activation function that produces the output. Can be a softmax of proabilities over vocabulary words or number of classes for some classifiction tasks.
 
    We have skipped the bias terms to keep the formulation simple.
+
 
 
 ## Inductive Bias
