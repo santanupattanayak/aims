@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/0200331e-b026-483f-a3db-8c0dd657f835)## Introduction to RNNs
+## Introduction to RNNs
 
 Recurrent Neural Networks (RNNs) are a class of neural architectures designed to model sequential or time-dependent data. 
 
@@ -41,7 +41,7 @@ There are two equations that govern the dynamics of a RNN
 
    We have skipped the bias terms to keep the formulation simple.
 
-
+![image](https://github.com/user-attachments/assets/0200331e-b026-483f-a3db-8c0dd657f835)
 
 ## Inductive Bias
 
