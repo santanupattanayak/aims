@@ -99,8 +99,8 @@ Some of the similarities of RNNs with State Space Models(SSM) are as follows:
 
    $`\nabla_{h_{t-k}} h_t`$  = $`\prod_{j=t:t-k+1}\nabla_{h_{j-1}} h_j=`$ $`f^{'}(t)*`$$`f^{'}(t-1)*..*`$$`f^{'}(t-k+1)*US^{k}U^{-1}`$
 
-   Do note that the eigen values may have imaginary component too and hence can be complex numbers, which may lead to oscillatory behavior in learning. 
-
+   Do note that the eigen values may have imaginary component too and hence can be complex numbers, which may lead to oscillatory behavior in learning. However for the purpose of our vanishing gradient analysis focusing on the magnitude of the eigen values should suffice.
+   
 10. When the magnitude of the eigen values $`|\lambda_{i}|`$ of $`W_{hh}`$ housed in $`S`$ are less than 1 then  $`|\lambda_{i}|^{k} \rightarrow 0 `$ when $`k`$ is large. Likewise the eigen values with magnitude > 1 with explode for large $`k`$. Vanishing gradient happens when the largest of the eigen value $`max_{i}|\lambda_{i}| < 1`$ as then $`S^{k} \rightarrow 0`$ . The $`f^{'}(t)`$ won't be able to help much in avoiding the vanishing gradient in this case as the derivatives of the $`tanh`$ is used for the function $`f`$  whose gradient is at all times < 1.
 
 11. Alternately if the magnitude of the eigen values are > 1 then it may lead to exploding gradient causing unstable weight updates. 
