@@ -57,6 +57,12 @@ $`h_t`$ = $`Ah_{t-1}`$  + $`Bx_{t}`$
 
 $`y_t = Ch_{t} + Dx_t`$  
 
+Some of the similarities of RNNs with State Space Models(SSM) are as follows:
+1. The hidden state $`h_t`$  in both SSMs and RNNs capture historical information.
+2. RNNs generalize this concept of SSM Models with nonlinear hidden state transitions and outputs using activations like tanh, sigmoid and ReLU.
+3. Unlike SSMs, which are often interpretable and analytically tractable, RNNs are expressive but harder to analyze.
+4. In essence, RNNs can be thought of as learnable, nonlinear state space models trained end-to-end via gradient descent.
+
 ## Understanding Vanishing Gradient in RNN
 
 1. Traditional sequence models like RNNs and LSTMs suffer from loss of memory as sequences get longer.
